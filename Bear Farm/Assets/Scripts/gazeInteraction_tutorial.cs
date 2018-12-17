@@ -14,14 +14,12 @@ public class gazeInteraction_tutorial : MonoBehaviour {
     public Text tutorialText;
     AudioSource source;
 
-    bool optionOn;
-    bool creditOn;
     bool tutorialOn;
-    private bool gazedAt;
+    public bool gazedAt;
 
     Sprite[] tutorialImages;
     public GameObject imagePanel;
-    int sceneNum;
+    public int sceneNum;
 
     // Use this for initialization
     void Start()
@@ -47,11 +45,12 @@ public class gazeInteraction_tutorial : MonoBehaviour {
                 tutorialMenu.SetActive(false);
                 titleMenu.SetActive(true);
             }
-            if(Input.GetButtonUp("Fire1") && !tutorialMenu.gameObject.activeSelf)
+            if (Input.GetButtonUp("Fire1") && !tutorialMenu.gameObject.activeSelf)
             {
                 source.Play();
                 titleMenu.SetActive(false);
                 tutorialMenu.SetActive(true);
+                gazedAt = false;
             }
             if (tutorialMenu.gameObject.activeSelf)
             {
@@ -60,6 +59,7 @@ public class gazeInteraction_tutorial : MonoBehaviour {
                 //플레이어가 한번씩 x 누를때마다 이미지가 넘어간다
                 if (Input.GetButtonUp("Fire1"))
                 {
+                    //Debug.Log("gigh");
                     source.Play();
                     sceneNum++;
                 }

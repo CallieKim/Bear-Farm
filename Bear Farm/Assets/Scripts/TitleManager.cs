@@ -43,22 +43,22 @@ public class TitleManager : MonoBehaviour {
             tutorialMenu.SetActive(false);
             titleMenu.SetActive(true);
         }
-        if(tutorialMenu.gameObject.activeSelf)
+        if (tutorialMenu.gameObject.activeSelf)
         {
             imagePanel.GetComponent<Image>().sprite = tutorialImages[0];
             tutorialText.text = "Welcome to the Teddy Bear Farm!";
             //플레이어가 한번씩 x 누를때마다 이미지가 넘어간다
-            if(Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 source.Play();
                 sceneNum++;
             }
-            if(sceneNum == 1)
+            if (sceneNum == 1)
             {
                 tutorialText.text = "You can interact with Teddy Bears \nby pressing X";
                 imagePanel.GetComponent<Image>().sprite = tutorialImages[1];
             }
-            else if(sceneNum == 2)
+            else if (sceneNum == 2)
             {
                 tutorialText.text = "You need to protect your bears!\nShoot the thief by pressing X";
                 imagePanel.GetComponent<Image>().sprite = tutorialImages[4];
@@ -94,40 +94,40 @@ public class TitleManager : MonoBehaviour {
         }
     }
 
-    public void onStartClick()
-    {
-        source.Play();
-        DataManager.Load();
-        SceneManager.LoadScene("TestNight_B");
-        //DataManager.Load();
-    }
+    //public void onStartClick()
+    //{
+    //    source.Play();
+    //    DataManager.Load();
+    //    SceneManager.LoadScene("TestNight_B");
+    //    //DataManager.Load();
+    //}
 
-    public void onTutorialClick()
-    {
-        source.Play();
-        titleMenu.SetActive(false);
-        tutorialMenu.SetActive(true);
-    }
+    //public void onTutorialClick()
+    //{
+    //    source.Play();
+    //    titleMenu.SetActive(false);
+    //    tutorialMenu.SetActive(true);
+    //}
 
 
-    public void onOptionClick()
-    {
-        source.Play();
-        titleMenu.SetActive(false);
-        optionMenu.SetActive(true);
-    }
+    //public void onOptionClick()
+    //{
+    //    source.Play();
+    //    titleMenu.SetActive(false);
+    //    optionMenu.SetActive(true);
+    //}
 
-    public void onCreditClick()
-    {
-        source.Play();
-        titleMenu.SetActive(false);
-        creditMenu.SetActive(true);
-    }
+    //public void onCreditClick()
+    //{
+    //    source.Play();
+    //    titleMenu.SetActive(false);
+    //    creditMenu.SetActive(true);
+    //}
 
-    public void onExitClick()
-    {
-        source.Play();
-        Application.Quit();
-    }
+    //public void onExitClick()
+    //{
+    //    source.Play();
+    //    Application.Quit();
+    //}
 
 }

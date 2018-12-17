@@ -29,14 +29,14 @@ public class gazeInteraction_credit : MonoBehaviour {
                 titleMenu.SetActive(false);
                 creditMenu.SetActive(true);
             }
-            if (Input.GetButtonUp("Jump"))//스페이스를 메뉴상태에서 누르면 한번씩 뒤로 간다
-            {
-                source.Play();
-                creditMenu.SetActive(false);
-                optionMenu.SetActive(false);
-                tutorialMenu.SetActive(false);
-                titleMenu.SetActive(true);
-            }
+            //if (Input.GetButtonUp("Jump"))//스페이스를 메뉴상태에서 누르면 한번씩 뒤로 간다
+            //{
+            //    source.Play();
+            //    creditMenu.SetActive(false);
+            //    optionMenu.SetActive(false);
+            //    tutorialMenu.SetActive(false);
+            //    titleMenu.SetActive(true);
+            //}
         }
     }
 
