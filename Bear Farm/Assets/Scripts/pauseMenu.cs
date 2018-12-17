@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class pauseMenu : MonoBehaviour
 {
     static public bool pause;
-    static public bool galleryOn;
+
     public bool optionOn;
-    bool GalleryOn;
+    //bool GalleryOn;
     public GameObject pauseMenuPanel;
     //public GameObject titleMenu;
-    public GameObject optionMenu;
+   // public GameObject optionMenu;
     public GameObject camera;
 
     public GameObject galleryM;
@@ -24,10 +24,10 @@ public class pauseMenu : MonoBehaviour
     
     void Start()
     {
-        optionOn = false;
-        GalleryOn = false;
+        //optionOn = false;
+        //GalleryOn = false;
         Time.timeScale = 1;//scene 로드될때 사물들이 움직이게 한다
-        optionMenu.SetActive(false);
+        //optionMenu.SetActive(false);
         pauseMenuPanel.SetActive(false);
         galleryM = GameObject.Find("GalleryManager");
         source = gameObject.GetComponent<AudioSource>();
@@ -38,23 +38,23 @@ public class pauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonUp("Jump") && !optionOn && !galleryOn)//세모 혹은 스페이스를 누르면 정지메뉴 나타난다 이때 option 창도 커져있으면 안된다
+        if (Input.GetButtonUp("Jump"))//세모 혹은 스페이스를 누르면 정지메뉴 나타난다 이때 option 창도 커져있으면 안된다
         {
             onPause();
         }
-        else if(Input.GetButtonUp("Jump") && optionOn)//스페이스를 메뉴상태에서 누르면 한번씩 뒤로 간다
-        {
-            source.Play();
-            optionMenu.SetActive(false);
-            pauseMenuPanel.SetActive(true);
-            optionOn = false;
-        }
-        else if(Input.GetButtonUp("Jump") && galleryOn)
+        //else if(Input.GetButtonUp("Jump") && optionOn)//스페이스를 메뉴상태에서 누르면 한번씩 뒤로 간다
+        //{
+        //    source.Play();
+        //    optionMenu.SetActive(false);
+        //    pauseMenuPanel.SetActive(true);
+        //    optionOn = false;
+        //}
+        else if(Input.GetButtonUp("Jump") && menuGallery.galleryOn)
         {
             source.Play();
             galleryM.GetComponent<GalleryManager>().turnOffGallery();
             pauseMenuPanel.SetActive(true);
-            galleryOn = false;
+            menuGallery.galleryOn = false;
 
         }
 
@@ -87,31 +87,31 @@ public class pauseMenu : MonoBehaviour
         }
     }
 
-    public void onExitClick()
-    {
-        source.Play();
-        DataManager.Save();
-        //Application.Quit();
-        SceneManager.LoadScene("Title");
-    }
+    //public void onExitClick()
+    //{
+    //    source.Play();
+    //    DataManager.Save();
+    //    //Application.Quit();
+    //    SceneManager.LoadScene("Title");
+    //}
 
-    public void onOptionClick()
-    {
-        source.Play();
-        optionMenu.transform.position = pauseMenuPanel.transform.position;
-        optionMenu.transform.rotation = pauseMenuPanel.transform.rotation;
-        pauseMenuPanel.SetActive(false);
-        optionMenu.SetActive(true);
-        optionOn = true;
-    }
+    //public void onOptionClick()
+    //{
+    //    source.Play();
+    //    optionMenu.transform.position = pauseMenuPanel.transform.position;
+    //    optionMenu.transform.rotation = pauseMenuPanel.transform.rotation;
+    //    pauseMenuPanel.SetActive(false);
+    //    optionMenu.SetActive(true);
+    //    optionOn = true;
+    //}
 
-    public void onGalleryClick()
-    {
-        source.Play();
-        galleryOn = true;
-        galleryM.GetComponent<GalleryManager>().showGallery();
-        pauseMenuPanel.SetActive(false);
-        //optionMenu.SetActive(false);
-    }
+    //public void onGalleryClick()
+    //{
+    //    source.Play();
+    //    //galleryOn = true;
+    //    galleryM.GetComponent<GalleryManager>().showGallery();
+    //    pauseMenuPanel.SetActive(false);
+    //    //optionMenu.SetActive(false);
+    //}
 
 }

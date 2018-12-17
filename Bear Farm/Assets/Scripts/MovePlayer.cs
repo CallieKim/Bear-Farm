@@ -94,7 +94,7 @@ public class MovePlayer : MonoBehaviour
 
         movement.y = rb.velocity.y;
         rb.velocity = movement;
-        Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+        //Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
     }
 
     public void Fire()

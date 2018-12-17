@@ -35,7 +35,7 @@ public class TitleManager : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))//스페이스를 메뉴상태에서 누르면 한번씩 뒤로 간다
+        if (Input.GetButtonUp("Jump"))//스페이스를 메뉴상태에서 누르면 한번씩 뒤로 간다
         {
             source.Play();
             creditMenu.SetActive(false);
