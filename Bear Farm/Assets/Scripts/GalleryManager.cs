@@ -71,6 +71,7 @@ public class GalleryManager : MonoBehaviour
 
     public void showGallery()
     {
+        Debug.Log("SHOWGALLERY CALLED");
         gameObject.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y, Camera.transform.position.z) + Camera.transform.forward * 0.5f;
         gameObject.transform.rotation = Camera.transform.rotation;
 
@@ -120,6 +121,7 @@ public class GalleryManager : MonoBehaviour
 
     public void turnOffGallery()
     {
+        Debug.Log("TURNOFFGALLERY CALLED");
         for (int i = 0; i < 10; i++)
         {
             if (i != 0)

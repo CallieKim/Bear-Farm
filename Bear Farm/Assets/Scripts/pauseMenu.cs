@@ -12,7 +12,7 @@ public class pauseMenu : MonoBehaviour
     //bool GalleryOn;
     public GameObject pauseMenuPanel;
     //public GameObject titleMenu;
-   // public GameObject optionMenu;
+    public GameObject optionMenu;
     public GameObject camera;
 
     public GameObject galleryM;
@@ -40,7 +40,25 @@ public class pauseMenu : MonoBehaviour
     {
         if (Input.GetButtonUp("Jump"))//세모 혹은 스페이스를 누르면 정지메뉴 나타난다 이때 option 창도 커져있으면 안된다
         {
-            onPause();
+            if (menuGallery.galleryOn)
+            {
+                menuGallery.galleryOn = false;
+                source.Play();
+                galleryM.GetComponent<GalleryManager>().turnOffGallery();
+                pauseMenuPanel.SetActive(true);
+            }
+            else if(menuOption.optionOn)
+            {
+                menuOption.optionOn = false;
+                source.Play();
+                optionMenu.SetActive(false);
+                pauseMenuPanel.SetActive(true);
+            }
+            else
+            {
+                onPause();
+            }
+            
         }
         //else if(Input.GetButtonUp("Jump") && optionOn)//스페이스를 메뉴상태에서 누르면 한번씩 뒤로 간다
         //{
@@ -49,14 +67,16 @@ public class pauseMenu : MonoBehaviour
         //    pauseMenuPanel.SetActive(true);
         //    optionOn = false;
         //}
+        /*
         else if(Input.GetButtonUp("Jump") && menuGallery.galleryOn)
         {
+            menuGallery.galleryOn = false;
+            Debug.Log("now i want to quit : galleryOn is " + menuGallery.galleryOn);
             source.Play();
             galleryM.GetComponent<GalleryManager>().turnOffGallery();
             pauseMenuPanel.SetActive(true);
-            menuGallery.galleryOn = false;
 
-        }
+        }*/
 
     }
 

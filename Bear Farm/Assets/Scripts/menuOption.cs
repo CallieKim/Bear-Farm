@@ -6,15 +6,12 @@ using UnityEngine;
 
 public class menuOption : MonoBehaviour {
     static public bool pause;
-    static public bool galleryOn;
-    public bool optionOn;
-    bool GalleryOn;
+    public static bool optionOn;
     public GameObject pauseMenuPanel;
     //public GameObject titleMenu;
     public GameObject optionMenu;
     public GameObject camera;
 
-    public GameObject galleryM;
     AudioSource source;
     AudioSource enemySound;
     GameObject enemy;
@@ -45,13 +42,13 @@ public class menuOption : MonoBehaviour {
                 optionOn = true;
             }
         }
-        else if (Input.GetButtonUp("Jump"))//스페이스를 메뉴상태에서 누르면 한번씩 뒤로 간다
-        {
-            source.Play();
-            optionMenu.SetActive(false);
-            pauseMenuPanel.SetActive(true);
-            optionOn = false;
-        }
+        //else if (Input.GetButtonUp("Jump"))//스페이스를 메뉴상태에서 누르면 한번씩 뒤로 간다
+        //{
+        //    source.Play();
+        //    optionMenu.SetActive(false);
+        //    pauseMenuPanel.SetActive(true);
+        //    optionOn = false;
+        //}
         
     }
 

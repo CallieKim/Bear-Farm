@@ -26,6 +26,7 @@ public class menuGallery : MonoBehaviour {
             {
                 source.Play();
                 galleryOn = true;
+                Debug.Log("galleryOn is " + galleryOn);
                 galleryM.GetComponent<GalleryManager>().showGallery();
                 pauseMenuPanel.SetActive(false);
             }
