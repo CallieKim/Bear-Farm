@@ -46,7 +46,7 @@ public class DataManager : MonoBehaviour
         intimacy_BearNum = 0;
         score_BearNum = 0;
 
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         Load();
 
     }
